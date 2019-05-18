@@ -24,35 +24,38 @@
 
 <body>
     <div id="home">
-        <header>
-            <nav class="navbar container navbar-expand-lg navbar-expand-md navbar-dark" role="navigation">
-                <a class="navbar-brand" href="../index.html"><img src="../images/emblem.png" height="30" class="d-inline-block align-top" alt="Logo"> Hull Seals</a>
+      <header>
+          <nav class="navbar container navbar-expand-lg navbar-expand-md navbar-dark" role="navigation">
+              <a class="navbar-brand" href="#"><img src="../images/emblem_scaled.png" height="30" class="d-inline-block align-top" alt="Logo"> Hull Seals</a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="../index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../knowledge">Knowledge Base</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Chat</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://forums.frontier.co.uk/showthread.php/452349-DW2-Fleet-Mechanics">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://inara.cz/squadron/5050/">Inara Squadron</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="../index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="../knowledge">Knowledge Base</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="../journal">Journal Reader</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="../about">About</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="../contact">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Login/Register</a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      </header>
         <section class="introduction">
             <article>
                 <p>
@@ -70,7 +73,8 @@
 		<div style="text-align: center;">
 			<div class="flex-box">
 				<h2>Please type in the amount you'd like to donate.</h2>
-	  <p>We thank you for your generous donation. It is only through the generous support of CMDRs like you that we are able to provide services galaxy-wide. After donating, you will receive an email confirming the donation. If you do not, please <a href="mailto:finance@hullseals.space?Subject=Donation%20issues" target="_top">Contact Us.</a> </p>
+	  <p>We thank you for your generous donation. It is only through the generous support of CMDRs like you that we are able to provide services galaxy-wide.
+      <br />After donating, you will receive an email confirming the donation. If you do not, please <a href="mailto:finance@hullseals.space?Subject=Donation%20issues" target="_top">Contact Us.</a> </p>
  <form action="charge.php" method="POST" id="custom_amount_form">
 	    <input class="custom_amount" onkeyup="custom_amount_calculate();" placeholder="$ Custom amount" type="number" name="custom_amount" />
 	    <input id="custom_amount_value" type="hidden" name="amount" />
@@ -121,20 +125,21 @@ function custom_amount_calculate() {
 </script>		</article>
         </section>
     </div>
-<footer class="page-footer font-small">
+    <footer class="page-footer font-small">
         <div class="container">
             <div class="row">
                 <div class="col-md-9 mt-md-0 mt-3">
                     <h5 class="text-uppercase">Hull Seals</h5>
-                    <p><em>The Hull Seals</em> were established in January of 3305 as the premier Hull Repair organization in Elite: Dangerous.</p>
+                    <p><em>The Hull Seals</em> were established in January of 3305, and have begun plans to roll out galaxy-wide!</p>
+					<a href="https://fuelrats.com/i-need-fuel" class="btn btn-sm btn-secondary">Need Fuel? Call the Rats!</a>
                 </div>
                 <hr class="clearfix w-100 d-md-none pb-3">
                 <div class="col-md-3 mb-md-0 mb-3">
                     <h5 class="text-uppercase">Links</h5>
 
                     <ul class="list-unstyled">
-                        <li><a href="https://twitter.com/HullSeals"><img alt="Twitter" height="20" src="../images/twitter.png" width="20"> Twitter</a></li>
-						<li><a href="#">Donate</a></li>
+                        <li><a href="https://twitter.com/HullSeals" target="_blank"><img alt="Twitter" height="20" src="../images/twitter_loss.png" width="20"></a> <a href="https://reddit.com/r/HullSeals" target="_blank"><img alt="Reddit" height="20" src="../images/reddit.png" width="20"></a> <a href="https://www.youtube.com/channel/UCwKysCkGU_C6V8F2inD8wGQ" target="_blank"><img alt="Youtube" height="20" src="../images/youtube.png" width="20"></a> <a href="https://www.twitch.tv/hullseals" target="_blank"><img alt="Twitch" height="20" src="../images/twitch.png" width="20"></a> <a href="https://gitlab.com/hull-seals-cyberseals" target="_blank"><img alt="GitLab" height="20" src="../images/gitlab.png" width="20"></a></li>
+						<li><a href="/donate">Donate</a></li>
                         <li><a href="https://hullseals.space/knowledge/books/important-information/page/privacy-policy">Privacy & Cookies Policy</a></li>
                     </ul>
                 </div>
