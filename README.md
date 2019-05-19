@@ -8,10 +8,14 @@ This code serves as a repository and backup to the Hull Seals Donations website,
 Simply load these files into your web directory and open in a browser. The pages are readable by all major browsers. Donations require javascript to be enabled in the browser.
 
 ## Requirements
-To load the pages, you will require a web browser, which you probably also needed to read this page. Javascript and an active internet connection is required for most functions.
+- PHP 5.5+
+- [Composer](https://getcomposer.org/)
+- [Oauth2 Client by League](league/oauth2-client) (Installed by Composer if not present)
+- A Web server software such as Apache2 or NGIX.
+- A JavaScript-enabled browser.
 
 ## Usage
-Open in browser. It's that simple.
+To install, download the latest [release](https://gitlab.com/hull-seals-cyberseals/code/on-ice/donations/tags) from our repository. Upload and extract the files to the directory or subdirectory you wish to install from, and run the composer install and update commands. Then, change the information in config.php.
 
 # Contributing
 Interested in joining the Hull Seals Cyberseals? Read up on [the Welcome Board](https://gitlab.com/hull-seals-cyberseals/welcome-to-the-hull-seals-devops-board).
