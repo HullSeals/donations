@@ -15,5 +15,5 @@
       'amount'   => $_POST['amount'],
       'currency' => 'usd',
   ]);
-  echo '<h1>Transaction successfully completed. You may now close the page.</h1>';
+  header("Location: success.php");
 ?>
