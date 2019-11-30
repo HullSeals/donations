@@ -1,3 +1,4 @@
+<?php require_once('./config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,19 +89,69 @@
                 <p>
                 <h1><em>Thank You</em> for considering donating to the Hull Seals.</h1>
                 </p>
-        <h4>Please choose the Correct Currency.</h4>
-        <hr />
-        <p>
-        <a href="usd.php" class="btn btn-primary btn-lg">US Dollars ($)</a>
-        <a href="eur.php" class="btn btn-info btn-lg">Euros (€)</a>
-        <a href="gbp.php" class="btn btn-primary btn-lg">UK Pounds (£)</a>
-        <a href="aud.php" class="btn btn-info btn-lg">Australian Dollars ($)</a>
-        <a href="cad.php" class="btn btn-primary btn-lg">Canadian Dollars ($)</a>
-
-        </p>
+				<p>
+					Although our work may seem simple, there a lot of services at work allowing us to continue our work and help you. While we have Seals who generously front the costs, contributions can allow us to expand our services and improve your experience with us.
+				</p>
 			</article>
 			</section>
 <div class="clearfix"></div>
+
+	<section class="donations">
+		<article>
+		<div style="text-align: center;">
+			<div class="flex-box">
+				<h2>Please type in the amount you'd like to donate.</h2>
+	  <p>We thank you for your generous donation. It is only through the generous support of CMDRs like you that we are able to provide services galaxy-wide.
+      <br />After donating, you will receive an email confirming the donation. If you do not, please <a href="mailto:finance@hullseals.space?Subject=Donation%20issues" target="_top">Contact Us.</a> </p>
+ <form action="chargeCAD.php" method="POST" id="custom_amount_form">
+	    <input class="custom_amount" onkeyup="custom_amount_calculate();" placeholder="$ Custom amount" type="number" name="custom_amount" />
+	    <input id="custom_amount_value" type="hidden" name="amount" />
+      <input type="hidden" name="currency" value="cad" />
+	    <script
+	      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	      data-key="pk_live_KiZ55OXEwCXcsyvKRoszm0mw00AJM6XE4j"
+	      data-name="The Hull Seals"
+	      data-description="Donation Amount"
+	      data-image="https://hullseals.space/images/emblem.png"
+	      data-locale="auto"
+	      data-currency="cad">
+	    </script>
+		</div>
+</div>
+    <script type="text/javascript">
+function custom_amount() {
+
+  var custom_form = document.getElementById('custom_amount_form');
+  var stripe_button = document.querySelector('#custom_amount_form button');
+  var stripe_script = document.querySelector('#custom_amount_form script');
+  custom_form.removeChild(stripe_button);
+  custom_form.removeChild(stripe_script);
+
+  var amount_box = document.querySelector('.custom_amount');
+  var amount = amount_box.value;
+  var amount_value = document.getElementById('custom_amount_value');
+  amount_value.value = amount * 100;
+
+  var sca = document.createElement('script');
+  sca.src = 'https://checkout.stripe.com/checkout.js';
+  sca.className = 'stripe-button';
+  sca.dataset.key = 'pk_live_KiZ55OXEwCXcsyvKRoszm0mw00AJM6XE4j';
+  sca.dataset.name = 'The Hull Seals';
+  sca.dataset.image = 'https://hullseals.space/images/emblem.png';
+  sca.dataset.locale = 'auto';
+  sca.dataset.currency = 'cad';
+  sca.dataset.amount = amount * 100;
+  sca.dataset.description = '$' + amount + ' Donation';
+
+  amount_box.parentNode.insertBefore(sca, amount_box.nextSibling);
+}
+
+function custom_amount_calculate() {
+  custom_amount();
+}
+</script>		</article>
+</script>		</article>
+        </section>
     </div>
     <footer class="page-footer font-small">
         <div class="container">
