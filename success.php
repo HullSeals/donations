@@ -83,7 +83,7 @@
                                 <a class="nav-link" href="../contact">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Login/Register</a>
+                                <a class="nav-link" href="https://hullseals.space/users/">Login/Register</a>
                             </li>
                         </ul>
                     </div>
