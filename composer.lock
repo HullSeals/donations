@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fbb613f860ab93a62d83ace67049179",
+    "content-hash": "97b938a105e1e31a9aca0f353dd62530",
     "packages": [
         {
             "name": "stripe/stripe-php",
-            "version": "v7.14.2",
+            "version": "v7.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "d7d11658defa08ca8f6fc6668c745aaa67f56bdf"
+                "reference": "657c8ec888d8bcb58dd8f4fa227809108b406a44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/d7d11658defa08ca8f6fc6668c745aaa67f56bdf",
-                "reference": "d7d11658defa08ca8f6fc6668c745aaa67f56bdf",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/657c8ec888d8bcb58dd8f4fa227809108b406a44",
+                "reference": "657c8ec888d8bcb58dd8f4fa227809108b406a44",
                 "shasum": ""
             },
             "require": {
@@ -27,7 +27,7 @@
                 "php": ">=5.6.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.15",
+                "friendsofphp/php-cs-fixer": "2.16.1",
                 "php-coveralls/php-coveralls": "^2.1",
                 "phpunit/phpunit": "^5.7",
                 "squizlabs/php_codesniffer": "^3.3",
@@ -61,7 +61,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2019-12-04T17:47:17+00:00"
+            "time": "2020-04-22T19:35:10+00:00"
         }
     ],
     "packages-dev": [],
