@@ -77,7 +77,7 @@ require_once('./config.php');
 		<section class="introduction">
 			<article>
 				<p></p>
-				<h1><em>Thank You</em> for considering donating!</h1>
+				<h1><em>Thank You</em> for considering a recurring donation!</h1>
 				<br />
 				<p>As simple as this all seems, it costs us almost $100 per month to operate our servers. Our Admins pay for this out of pocket, but any contributions help lessen the burden.</p>
 				<p>Your generous donation will go toward maintenance of our servers, and expansion into bigger, and better, things in the future!</p>
@@ -94,38 +94,38 @@ require_once('./config.php');
 		</select>
 </div>
 <div id="USD" class="curr_chart">
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgvpnViwhaTpf">Donate $1</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgvnQUKV1smy2">Donate $5</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgvIaoExsEgos">Donate $10</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgvTfA6AgInkn">Donate $20</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sQpllhOPEB6">Donate $1 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sLqUrfsb7Wy">Donate $5 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8siH3tFjfZXP">Donate $10 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sNHxQwi3tSQ">Donate $20 Per Month</button>
 </div>
 <div id="GBP" class="curr_chart">
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwemKESvpUvC">Donate £1</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwzDOUx8VyB2">Donate £5</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwZGt1nGfV82">Donate £10</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgw1DHOPSwuuc">Donate £20</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sfKTcZjaCOC">Donate £1 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8skSsZRCI5iF">Donate £5 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8svVfnXhMDPg">Donate £10 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sZEeUnV9c00">Donate £20 Per Month</button>
 </div>
 <div id="EUR" class="curr_chart">
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgv5iGQ06qZQ6">Donate €1</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgvivSZaOL7oC">Donate €5</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwZg0qFI1LCu">Donate €10</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgw3HJRQg1CQ9">Donate €20</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8saj08rDr1uv">Donate €1 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sWAqWjomhwV">Donate €5 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sLtCqIopBgN">Donate €10 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sxXulH9AKVp">Donate €20 Per Month</button>
 </div>
 <div id="CAD" class="curr_chart">
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwFsb4jlAH3q">Donate CA$1</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwd847US8Yeb">Donate CA$5</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwdtebsh9erj">Donate CA$10</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgw9Yr5vN8Cl1">Donate CA$20</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sxeq2i7vZAd">Donate CA$1 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sM4ZSc2d9Dn">Donate CA$5 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8stKk0YzkEaY">Donate CA$10 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sbScmNUx6Ee">Donate CA$20 Per Month</button>
 </div>
 <div id="AUD" class="curr_chart">
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwNxYs4rUuMa">Donate A$1</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwJDxA2F5jAh">Donate A$5</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwgDYfyfeSQt">Donate A$10</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgxUqnrskXk5s">Donate A$20</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8smyjvzNaKuY">Donate A$1 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sK9Mwy5xcra">Donate A$5 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sbxRR5T9RPO">Donate A$10 Per Month</button>
+	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="subscription" data-price-id="price_HM8sEgMtKrPD72">Donate A$20 Per Month</button>
 </div>
 <br />
 <p>If you have any questions, please email our team at <a class="btn btn-secondary" href="mailto:finance@hullseals.space" style="text-decoration: none;">finance@hullseals.space</a></p>
-<p>Looking for recurring donations? <a class="btn btn-secondary" href="recurring.php" style="text-decoration: none;">Go Here</a></p>
+<p>Looking for one-time donations? <a class="btn btn-secondary" href="index.php" style="text-decoration: none;">Go Here</a></p>
 			</article>
 		</section>
 		<div class="clearfix"></div>
