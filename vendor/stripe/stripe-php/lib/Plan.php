@@ -3,12 +3,16 @@
 namespace Stripe;
 
 /**
+ * You can now model subscriptions more flexibly using the <a
+ * href="https://stripe.com/docs/api#prices">Prices API</a>. It replaces the Plans
+ * API and is backwards compatible to simplify your migration.
+ *
  * Plans define the base price, currency, and billing cycle for recurring purchases
- * of products. Products help you track inventory or provisioning, and plans help
- * you track pricing. Different physical goods or levels of service should be
- * represented by products, and pricing options should be represented by plans.
- * This approach lets you change prices without having to change your provisioning
- * scheme.
+ * of products. <a href="https://stripe.com/docs/api#products">Products</a> help
+ * you track inventory or provisioning, and plans help you track pricing. Different
+ * physical goods or levels of service should be represented by products, and
+ * pricing options should be represented by plans. This approach lets you change
+ * prices without having to change your provisioning scheme.
  *
  * For example, you might have a single &quot;gold&quot; product that has plans for
  * $10/month, $100/year, €9/month, and €90/year.
@@ -16,8 +20,7 @@ namespace Stripe;
  * Related guides: <a
  * href="https://stripe.com/docs/billing/subscriptions/set-up-subscription">Set up
  * a subscription</a> and more about <a
- * href="https://stripe.com/docs/billing/subscriptions/products-and-plans">products
- * and plans</a>.
+ * href="https://stripe.com/docs/billing/prices-guide">products and prices</a>.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
@@ -31,7 +34,7 @@ namespace Stripe;
  * @property string $interval The frequency at which a subscription is billed. One of <code>day</code>, <code>week</code>, <code>month</code> or <code>year</code>.
  * @property int $interval_count The number of intervals (specified in the <code>interval</code> attribute) between subscription billings. For example, <code>interval=month</code> and <code>interval_count=3</code> bills every 3 months.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property \Stripe\StripeObject $metadata Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property \Stripe\StripeObject $metadata Set of <a href="https://stripe.com/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property null|string $nickname A brief description of the plan, hidden from customers.
  * @property null|string|\Stripe\Product $product The product whose pricing this plan determines.
  * @property null|\Stripe\StripeObject[] $tiers Each element represents a pricing tier. This parameter requires <code>billing_scheme</code> to be set to <code>tiered</code>. See also the documentation for <code>billing_scheme</code>.
