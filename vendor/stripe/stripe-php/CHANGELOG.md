@@ -1,5 +1,26 @@
 # Changelog
 
+## 7.45.0 - 2020-07-28
+* [#981](https://github.com/stripe/stripe-php/pull/981) PHPdoc updates
+
+## 7.44.0 - 2020-07-20
+* [#948](https://github.com/stripe/stripe-php/pull/948) Add `first()` and `last()` functions to `Collection`
+
+## 7.43.0 - 2020-07-17
+* [#975](https://github.com/stripe/stripe-php/pull/975) Add support for `political_exposure` on `Person`
+
+## 7.42.0 - 2020-07-15
+* [#974](https://github.com/stripe/stripe-php/pull/974) Add new constants for `purpose` on `File`
+
+## 7.41.1 - 2020-07-15
+* [#973](https://github.com/stripe/stripe-php/pull/973) Multiple PHPDoc fixes
+
+## 7.41.0 - 2020-07-14
+* [#971](https://github.com/stripe/stripe-php/pull/971) Adds enum values for `billing_address_collection` on Checkout `Session`
+
+## 7.40.0 - 2020-07-06
+* [#964](https://github.com/stripe/stripe-php/pull/964) Add OAuthService
+
 ## 7.39.0 - 2020-06-25
 * [#960](https://github.com/stripe/stripe-php/pull/960) Add constants for `payment_behavior` on `Subscription`
 
