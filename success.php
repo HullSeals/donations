@@ -11,8 +11,8 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
 <html lang="en">
 
 <head>
-    <meta content="Your Resources for the Seals" name="description">
-    <title>Seal Links | The Hull Seals</title>
+    <meta content="Donate to The Hull Seals" name="description">
+    <title>Success | The Hull Seals</title>
     <?php include '../assets/includes/headerCenter.php'; ?>
 
 </head>

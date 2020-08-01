@@ -11,8 +11,8 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
 <html lang="en">
 
 <head>
-    <meta content="Your Resources for the Seals" name="description">
-    <title>Seal Links | The Hull Seals</title>
+    <meta content="Recurring Donations to the Hull Seals" name="description">
+    <title>Recurring Donations | The Hull Seals</title>
     <?php include '../assets/includes/headerCenter.php'; ?>
 	  <script src="https://js.stripe.com/v3/"></script>
 	<script>

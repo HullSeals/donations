@@ -11,7 +11,7 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
 <html lang="en">
 
 <head>
-    <meta content="Donations for The Hull Seals" name="description">
+    <meta content="Donate to The Hull Seals" name="description">
     <title>Canceled Donation | The Hull Seals</title>
     <?php include '../assets/includes/headerCenter.php'; ?>
 
