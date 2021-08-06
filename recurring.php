@@ -84,6 +84,15 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
 <br />
 <p>If you have any questions, please email our team at <a class="btn btn-secondary" href="mailto:finance@hullseals.space" style="text-decoration: none;">finance@hullseals.space</a></p>
 <p>Looking for one-time donations? <a class="btn btn-secondary" href="index.php" style="text-decoration: none;">Go Here</a></p>
+<hr style="border: 5px solid orange; border-radius: 5px;">
+<div style="text-align:center;">
+<p>Or, donate via Paypal</p>
+<form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="7QW38UUWV6CMN" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+</form>
+</div>
 </article>
 <div class="clearfix"></div>
 </section>
