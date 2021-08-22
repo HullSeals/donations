@@ -46,35 +46,35 @@ if (isset($_GET['send']))
 				<p>As simple as this all seems, it costs us almost $100 per month to operate our servers. Our Admins pay for this out of pocket, but any contributions help lessen the burden.</p>
 				<p>Your generous donation will go toward maintenance of our servers, and expansion into bigger, and better, things in the future!</p>
 				<hr>
-        <div id="donationarea" style="text-align:center;background-color:Gainsboro;border-radius: 25px; color:black;">
+        <div id="donationarea" style="text-align:center;background-color:#585858;border-radius: 25px; color:black;">
   				<div style="max-width:85%" class="mx-auto">
             <br>
             <form action="?send" method="post">
           <h4>Please select your currency...</h4>
           <div class="btn-group" role="group">
-  <input type="radio" class="btn-check" name="currselect" id="usd" autocomplete="off" onclick="eatmyass('$')" value="usd" checked required>
+  <input type="radio" class="btn-check" name="currselect" id="usd" autocomplete="off" onclick="currType('$')" value="usd" checked required>
   <label class="btn btn-outline-success" for="usd">USD</label>
-  <input type="radio" class="btn-check" name="currselect" id="gbp" autocomplete="off" onclick="eatmyass('£')" value="gbp">
+  <input type="radio" class="btn-check" name="currselect" id="gbp" autocomplete="off" onclick="currType('£')" value="gbp">
   <label class="btn btn-outline-success" for="gbp">GBP</label>
-  <input type="radio" class="btn-check" name="currselect" id="eur" autocomplete="off" onclick="eatmyass('€')" value="eur">
+  <input type="radio" class="btn-check" name="currselect" id="eur" autocomplete="off" onclick="currType('€')" value="eur">
   <label class="btn btn-outline-success" for="eur">EUR</label>
-  <input type="radio" class="btn-check" name="currselect" id="can" autocomplete="off" onclick="eatmyass('C$')" value="cad">
+  <input type="radio" class="btn-check" name="currselect" id="can" autocomplete="off" onclick="currType('C$')" value="cad">
   <label class="btn btn-outline-success" for="can">CAN</label>
-  <input type="radio" class="btn-check" name="currselect" id="aud" autocomplete="off" onclick="eatmyass('A$')" value="aud">
+  <input type="radio" class="btn-check" name="currselect" id="aud" autocomplete="off" onclick="currType('A$')" value="aud">
   <label class="btn btn-outline-success" for="aud">AUD</label>
 </div>
 <br />
 <h4>And Amount...</h4>
 <div class="btn-group" role="group" id="currgroup">
-<input type="radio" class="btn-check" name="amntselect" id="1" autocomplete="off" onclick="setvalue()" value="1" required>
+<input type="radio" class="btn-check" name="amntselect" id="1" autocomplete="off" onclick="setValue()" value="1" required>
 <label class="btn btn-outline-success" for="1" id="lbl1">$1</label>
-<input type="radio" class="btn-check" name="amntselect" id="5" autocomplete="off" onclick="setvalue()" value="5">
+<input type="radio" class="btn-check" name="amntselect" id="5" autocomplete="off" onclick="setValue()" value="5">
 <label class="btn btn-outline-success" for="5" id="lbl5">$5</label>
-<input type="radio" class="btn-check" name="amntselect" id="10" autocomplete="off" onclick="setvalue()" value="10">
+<input type="radio" class="btn-check" name="amntselect" id="10" autocomplete="off" onclick="setValue()" value="10">
 <label class="btn btn-outline-success" for="10" id="lbl10">$10</label>
-<input type="radio" class="btn-check" name="amntselect" id="20" autocomplete="off" onclick="setvalue()" value="20">
+<input type="radio" class="btn-check" name="amntselect" id="20" autocomplete="off" onclick="setValue()" value="20">
 <label class="btn btn-outline-success" for="20" id="lbl20">$20</label>
-<input type="radio" class="btn-check" name="amntselect" id="Other" autocomplete="off" onclick="othervalue()" value="other">
+<input type="radio" class="btn-check" name="amntselect" id="Other" autocomplete="off" onclick="otherValue()" value="other">
 <label class="btn btn-outline-success" for="Other">Other</label>
 </div>
 <br>
@@ -102,17 +102,17 @@ if (isset($_GET['send']))
 </body>
 </html>
 <script>
-function eatmyass(symbol) {
+function currType(symbol) {
   document.getElementById("lbl1").innerHTML = symbol + " 1"
   document.getElementById("lbl5").innerHTML = symbol + " 5"
   document.getElementById("lbl10").innerHTML = symbol + " 10"
   document.getElementById("lbl20").innerHTML = symbol + " 20"
 }
-function setvalue() {
+function setValue() {
   document.getElementById('otheramnt').style.display='none'
   document.getElementById('other_text').required=false
 }
-function othervalue() {
+function otherValue() {
   document.getElementById('otheramnt').style.display='block'
   document.getElementById('other_text').required = true;
 }
