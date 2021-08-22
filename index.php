@@ -6,28 +6,10 @@ error_reporting(E_ALL);
 //UserSpice Required
 require_once '../../users/init.php';  //make sure this path is correct!
 if (!securePage($_SERVER['PHP_SELF'])){die();}
-
-if (isset($_GET['send']))
-{
-  echo "currency:";
-  echo $_POST['currselect'];
-  echo '<br> Amount:';
-  echo $_POST['amntselect'];
-  echo '<br> Other:';
-  echo $_POST['other_text'];
-  echo '<br> Recurring:';
-  if (!isset($_POST['recurring'])) {
-    echo "single";
-  }
-  else {
-    echo $_POST['recurring'];
-  }
-}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta content="Recurring Donations to the Hull Seals" name="description">
   <title>Donate | The Hull Seals</title>
@@ -46,10 +28,10 @@ if (isset($_GET['send']))
 				<p>As simple as this all seems, it costs us almost $100 per month to operate our servers. Our Admins pay for this out of pocket, but any contributions help lessen the burden.</p>
 				<p>Your generous donation will go toward maintenance of our servers, and expansion into bigger, and better, things in the future!</p>
 				<hr>
-        <div id="donationarea" style="text-align:center;background-color:#585858;border-radius: 25px; color:black;">
-  				<div style="max-width:85%" class="mx-auto">
+        <div id="donationarea">
+  				<div style="max-width:65%;text-align:center;background-color:#585858;border-radius: 25px; color:black;"" class="mx-auto">
             <br>
-            <form action="?send" method="post">
+            <form action="processing.php" method="post">
           <h4>Please select your currency...</h4>
           <div class="btn-group" role="group">
   <input type="radio" class="btn-check" name="currselect" id="usd" autocomplete="off" onclick="currType('$')" value="usd" checked required>
@@ -81,16 +63,17 @@ if (isset($_GET['send']))
 <div id = "otheramnt" style="display:none">
   <input type="number" placeholder="Other..." id="other_text" name="other_text" width="100%" min=1>
 </div>
-<hr>
+<!--<hr>
 <h5>Make this a recurring donation? (Monthly)</h5>
 <div class="form-check form-switch">
   <input class="form-check-input" type="checkbox" id="recurring" name="recurring" value="sub">
   <label class="form-check-label" for="recurring">Yes! Make this a recurring donation.</label>
-</div>
+</div> -->
 <br>
 <button class="btn btn-success" type="submit">Donate</button>
 </form>
 <a href="https://stripe.com" target="_blank"><img src="stripe.svg" alt="Powered by Stripe" width="15%" style='float:right;'></a>
+<sub style="float:left">Questions? Email us at finance@hullseals.space</sub>
 <br><br>
 </div>
 </div>
