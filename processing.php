@@ -8,7 +8,7 @@ if (!isset($_POST['currselect'])) {
   header("Location: .");
 }
 
-if ($_POST['amntselect'] == 'Other') {
+if ($_POST['amntselect'] == 'other') {
   $amnt = $_POST['other_text'];
 }
 else {
