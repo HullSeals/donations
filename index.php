@@ -45,7 +45,7 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
   <label class="btn btn-outline-light" for="aud">AUD</label>
 </div>
 <br />
-<h4>And Amount...</h4>
+<h4>...and Amount...</h4>
 <div class="btn-group" role="group" id="currgroup">
 <input type="radio" class="btn-check" name="amntselect" id="1" autocomplete="off" onclick="setValue()" value="1" required>
 <label class="btn btn-outline-light" for="1" id="lbl1">$1</label>
@@ -67,7 +67,7 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
 <div class="form-check form-switch">
   <input class="form-check-input" type="checkbox" id="recurring" name="recurring" value="sub">
   <label class="form-check-label" for="recurring">Yes! Make this a recurring donation.</label>
-</div> 
+</div>
 <br>
 <button class="btn btn-success" type="submit">Donate</button>
 </form>
