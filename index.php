@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //UserSpice Required
-require_once '../../users/init.php';  //make sure this path is correct!
+require_once '../users/init.php';  //make sure this path is correct!
 if (!securePage($_SERVER['PHP_SELF'])){die();}?>
 
 <!DOCTYPE html>
@@ -14,12 +14,12 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
   <title>Donate | The Hull Seals</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-  <?php include '../../assets/includes/headerCenter.php'; ?>
+  <?php include '../assets/includes/headerCenter.php'; ?>
   <script src="https://js.stripe.com/v3/" integrity="sha384-kjyYhV/aySviNR/Hp59ySKU+VZfGJYfQDT/2Gv3JBSM3J0iemmgsHyT0XKNlB+NF" crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="home">
-    <?php include '../../assets/includes/menuCode.php';?>
+    <?php include '../assets/includes/menuCode.php';?>
       <section class="introduction container">
     <article id="intro3">
 				<h2><em>Thank You</em> for considering donating!</h2>
@@ -80,7 +80,7 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
 <div class="clearfix"></div>
 </section>
 </div>
-<?php include '../../assets/includes/footer.php'; ?>
+<?php include '../assets/includes/footer.php'; ?>
 </body>
 </html>
 <script>
