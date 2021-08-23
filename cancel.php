@@ -21,8 +21,8 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
       <?php include '../assets/includes/menuCode.php';?>
         <section class="introduction container">
 	    <article id="intro3">
-        <h1>Transaction Cancelled.</h1>
-        <h5 class="text-danger">Your donation has been canceled.<br /><br /> You may now close the tab.<br /><br /> Your card has not been charged.</h5>
+        <h1>Transaction Canceled.</h1>
+        <h5 class="text-danger">Your donation has been canceled.<br /><br /> You may now close the tab.<br /><br /> You have not been charged.</h5>
 			</article>
 			<div class="clearfix"></div>
 	</section>

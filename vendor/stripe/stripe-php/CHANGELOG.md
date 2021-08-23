@@ -1,5 +1,16 @@
 # Changelog
 
+## 7.94.0 - 2021-08-19
+* [#1173](https://github.com/stripe/stripe-php/pull/1173) API Updates
+  * Add support for new value `fil` on enum `Checkout.Session.locale`
+  * Add support for new value `au_arn` on enum `TaxId.type`
+
+## 7.93.0 - 2021-08-11
+* [#1172](https://github.com/stripe/stripe-php/pull/1172) API Updates
+  * Add support for `locale` on `BillingPortal.Session`
+
+* [#1171](https://github.com/stripe/stripe-php/pull/1171) Fix typo in docblock `CurlClient::executeStreamingRequestWithRetries`
+
 ## 7.92.0 - 2021-07-28
 * [#1167](https://github.com/stripe/stripe-php/pull/1167) API Updates
   * Add support for `account_type` on `BankAccount`

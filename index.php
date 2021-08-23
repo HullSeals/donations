@@ -9,152 +9,93 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta content="Donate to the Hull Seals" name="description">
-    <title>Donate | The Hull Seals</title>
-    <?php include '../assets/includes/headerCenter.php'; ?>
-    <script src="https://js.stripe.com/v3/"></script>
-  	<script>
-  	$(document).on('change', '.div-toggle', function() {
-  	  var target = $(this).data('target');
-  	  var show = $("option:selected", this).data('show');
-  	  $(target).children().addClass('hide');
-  	  $(show).removeClass('hide');
-  	});
-  	$(document).ready(function(){
-  	    $('.div-toggle').trigger('change');
-  	});</script>
+  <meta content="Donations to the Hull Seals" name="description">
+  <title>Donate | The Hull Seals</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <?php include '../assets/includes/headerCenter.php'; ?>
+  <script src="https://js.stripe.com/v3/" integrity="sha384-kjyYhV/aySviNR/Hp59ySKU+VZfGJYfQDT/2Gv3JBSM3J0iemmgsHyT0XKNlB+NF" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="home">
-      <?php include '../assets/includes/menuCode.php';?>
-        <section class="introduction container">
-	    <article id="intro3">
-				<p></p>
-				<h1><em>Thank You</em> for considering donating!</h1>
+  <div id="home">
+    <?php include '../assets/includes/menuCode.php';?>
+      <section class="introduction container">
+    <article id="intro3">
+				<h2><em>Thank You</em> for considering donating!</h2>
 				<br />
 				<p>As simple as this all seems, it costs us almost $100 per month to operate our servers. Our Admins pay for this out of pocket, but any contributions help lessen the burden.</p>
 				<p>Your generous donation will go toward maintenance of our servers, and expansion into bigger, and better, things in the future!</p>
 				<hr>
-        <div>
-				<div style="max-width:85%" class="mx-auto">
-<div class="input-group mb-3">
-		<select id="curr_select" class="custom-select">
-				<option>Please select your currency.</option>
-				<option value="USD">US Dollars</option>
-				<option value="GBP">UK Pounds</option>
-				<option value="EUR">Euros</option>
-				<option value="CAD">Canadian Dollars</option>
-				<option value="AUD">Australian Dollars</option>
-		</select>
+        <div id="donationarea">
+  				<div style="max-width:65%;text-align:center;" class="mx-auto">
+            <br>
+            <form action="processing.php" method="post">
+          <h4>Please select your currency...</h4>
+          <div class="btn-group" role="group">
+  <input type="radio" class="btn-check" name="currselect" id="usd" autocomplete="off" onclick="currType('$')" value="usd" checked required>
+  <label class="btn btn-outline-light" for="usd">USD</label>
+  <input type="radio" class="btn-check" name="currselect" id="gbp" autocomplete="off" onclick="currType('£')" value="gbp">
+  <label class="btn btn-outline-light" for="gbp">GBP</label>
+  <input type="radio" class="btn-check" name="currselect" id="eur" autocomplete="off" onclick="currType('€')" value="eur">
+  <label class="btn btn-outline-light" for="eur">EUR</label>
+  <input type="radio" class="btn-check" name="currselect" id="can" autocomplete="off" onclick="currType('C$')" value="cad">
+  <label class="btn btn-outline-light" for="can">CAN</label>
+  <input type="radio" class="btn-check" name="currselect" id="aud" autocomplete="off" onclick="currType('A$')" value="aud">
+  <label class="btn btn-outline-light" for="aud">AUD</label>
 </div>
-<div id="USD" class="curr_chart">
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgvpnViwhaTpf">Donate $1</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgvnQUKV1smy2">Donate $5</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgvIaoExsEgos">Donate $10</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgvTfA6AgInkn">Donate $20</button>
+<br />
+<h4>...and Amount...</h4>
+<div class="btn-group" role="group" id="currgroup">
+<input type="radio" class="btn-check" name="amntselect" id="1" autocomplete="off" onclick="setValue()" value="1" required>
+<label class="btn btn-outline-light" for="1" id="lbl1">$1</label>
+<input type="radio" class="btn-check" name="amntselect" id="5" autocomplete="off" onclick="setValue()" value="5">
+<label class="btn btn-outline-light" for="5" id="lbl5">$5</label>
+<input type="radio" class="btn-check" name="amntselect" id="10" autocomplete="off" onclick="setValue()" value="10">
+<label class="btn btn-outline-light" for="10" id="lbl10">$10</label>
+<input type="radio" class="btn-check" name="amntselect" id="20" autocomplete="off" onclick="setValue()" value="20">
+<label class="btn btn-outline-light" for="20" id="lbl20">$20</label>
+<input type="radio" class="btn-check" name="amntselect" id="Other" autocomplete="off" onclick="otherValue()" value="other">
+<label class="btn btn-outline-light" for="Other">Other</label>
 </div>
-<div id="GBP" class="curr_chart">
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwemKESvpUvC">Donate £1</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwzDOUx8VyB2">Donate £5</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwZGt1nGfV82">Donate £10</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgw1DHOPSwuuc">Donate £20</button>
+<br>
+<div id = "otheramnt" style="display:none">
+  <input type="number" placeholder="Other..." id="other_text" name="other_text" width="100%" min=1>
 </div>
-<div id="EUR" class="curr_chart">
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgv5iGQ06qZQ6">Donate €1</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgvivSZaOL7oC">Donate €5</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwZg0qFI1LCu">Donate €10</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgw3HJRQg1CQ9">Donate €20</button>
+  <hr>
+<h5>Make this a recurring donation? (Monthly)</h5>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="recurring" name="recurring" value="sub">
+  <label class="form-check-label" for="recurring">Yes! Make this a recurring donation.</label>
 </div>
-<div id="CAD" class="curr_chart">
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwFsb4jlAH3q">Donate CA$1</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwd847US8Yeb">Donate CA$5</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwdtebsh9erj">Donate CA$10</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgw9Yr5vN8Cl1">Donate CA$20</button>
-</div>
-<div id="AUD" class="curr_chart">
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwNxYs4rUuMa">Donate A$1</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwJDxA2F5jAh">Donate A$5</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgwgDYfyfeSQt">Donate A$10</button>
-	<button type="button" class="btn btn-secondary btn-block" data-checkout-mode="payment" data-price-id="sku_HHgxUqnrskXk5s">Donate A$20</button>
+<br>
+<button class="btn btn-success" type="submit">Donate</button>
+</form>
+<a href="https://stripe.com" target="_blank"><img src="stripe.svg" alt="Powered by Stripe" width="15%" style='float:right;'></a>
+<sub style="float:left">Questions? Email us at finance@hullseals.space</sub>
+<br><br>
 </div>
 </div>
 <br />
-<p>If you have any questions, please email our team at <a class="btn btn-secondary" href="mailto:finance@hullseals.space" style="text-decoration: none;">finance@hullseals.space</a></p>
-<p>Looking for recurring donations? <a class="btn btn-secondary" href="recurring.php" style="text-decoration: none;">Go Here</a></p>
-<hr style="border: 5px solid orange; border-radius: 5px;">
-<div style="text-align:center;">
-<p>Or, donate via Paypal</p>
-<form action="https://www.paypal.com/donate" method="post" target="_top">
-<input type="hidden" name="hosted_button_id" value="7QW38UUWV6CMN" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
-</div>
-</article>
 <div class="clearfix"></div>
 </section>
 </div>
 <?php include '../assets/includes/footer.php'; ?>
-	<script>
-	$(document).ready(function(){
-
-	  //hides dropdown content
-	  $(".curr_chart").hide();
-	  //listen to dropdown for change
-	  $("#curr_select").change(function(){
-	    //rehide content on change
-	    $('.curr_chart').hide();
-	    //unhides current item
-	    $('#'+$(this).val()).show();
-	  });
-
-	});
-	</script>
-
-	<script>
-		 // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
-		 var PUBLISHABLE_KEY = 'pk_live_KiZ55OXEwCXcsyvKRoszm0mw00AJM6XE4j';
-		 // Replace with the domain you want your users to be redirected back to after payment
-		 var DOMAIN = location.href.replace(/[^/]*$/, '');
-
-		 if (PUBLISHABLE_KEY === 'NULL') {
-			 console.log(
-				 'Replace the hardcoded publishable key with your own publishable key: https://dashboard.stripe.com/test/apikeys'
-			 );
-		 }
-
-		 var stripe = Stripe(PUBLISHABLE_KEY);
-
-		 // Handle any errors from Checkout
-		 var handleResult = function (result) {
-			 if (result.error) {
-				 var displayError = document.getElementById('error-message');
-				 displayError.textContent = result.error.message;
-			 }
-		 };
-
-		 document.querySelectorAll('button').forEach(function (button) {
-			 button.addEventListener('click', function (e) {
-				 var mode = e.target.dataset.checkoutMode;
-				 var priceId = e.target.dataset.priceId;
-				 var items = [{ price: priceId, quantity: 1 }];
-
-				 // Make the call to Stripe.js to redirect to the checkout page
-				 // with the sku or plan ID.
-				 stripe
-					 .redirectToCheckout({
-						 mode: mode,
-						 lineItems: items,
-						 successUrl:
-							 DOMAIN + 'success.php?session_id={CHECKOUT_SESSION_ID}',
-						 cancelUrl:
-							 DOMAIN + 'canceled.php?session_id={CHECKOUT_SESSION_ID}',
-					 })
-					 .then(handleResult);
-			 });
-		 });
-	 </script>
 </body>
 </html>
+<script>
+function currType(symbol) {
+  document.getElementById("lbl1").innerHTML = symbol + "1"
+  document.getElementById("lbl5").innerHTML = symbol + "5"
+  document.getElementById("lbl10").innerHTML = symbol + "10"
+  document.getElementById("lbl20").innerHTML = symbol + "20"
+}
+function setValue() {
+  document.getElementById('otheramnt').style.display='none'
+  document.getElementById('other_text').required=false
+}
+function otherValue() {
+  document.getElementById('otheramnt').style.display='block'
+  document.getElementById('other_text').required = true;
+}
+</script>

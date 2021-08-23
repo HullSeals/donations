@@ -35,12 +35,12 @@ private static $installed = array (
     ),
     'stripe/stripe-php' => 
     array (
-      'pretty_version' => 'v7.92.0',
-      'version' => '7.92.0.0',
+      'pretty_version' => 'v7.94.0',
+      'version' => '7.94.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '4b549e6f7d3e7ffd877547a0f1e8bd01c363e268',
+      'reference' => '03cd6b5c1c4fc9087ddd1dd046457bff274294d6',
     ),
   ),
 );
