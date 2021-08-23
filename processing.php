@@ -1,8 +1,12 @@
 <?php
 require 'vendor/autoload.php';
-\Stripe\Stripe::setApiKey('sk_test_5twoOxoGyKx6zNUmBlUcMvZ2000bB0ZXpm');
+\Stripe\Stripe::setApiKey('');
 
 header('Content-Type: application/json');
+
+if (!isset($_POST['currselect'])) {
+  header("Location: .");
+}
 
 if ($_POST['amntselect'] == 'Other') {
   $amnt = $_POST['other_text'];
@@ -15,6 +19,7 @@ $curr = $_POST['currselect'];
 
 $YOUR_DOMAIN = 'https://hullseals.space/donate';
 
+if (!isset($_POST['recurring'])) {
 if ($curr == "eur") {
   $checkout_session = \Stripe\Checkout\Session::create([
   'line_items' => [[
@@ -57,6 +62,52 @@ else {
   'cancel_url' => $YOUR_DOMAIN . '/cancel.php',
 ]);
 }
+}
+if (isset($_POST['recurring'])) {
+  if ($curr == 'usd') {
+    $price = 'price_1JRRyDG70gztiKLsSBdd4sTG';
+  }
+  elseif ($curr == "eur") {
+    $price = 'price_1JRRyDG70gztiKLsUubg9N7d';
+  }
+  elseif ($curr == "gbp") {
+    $price = 'price_1JRRyDG70gztiKLsDEnbEzTc';
+  }
+  elseif ($curr == "cad") {
+    $price = 'price_1JRRyDG70gztiKLsi4HoeHqy';
+  }
+  elseif ($curr == "aud") {
+    $price = 'price_1JRRyDG70gztiKLs1NQOAtb9';
+  }
+  if ($curr == "eur") {
+    $checkout_session = \Stripe\Checkout\Session::create([
+    'line_items' => [[
+      'price' => $price,
+      'quantity' => $amnt,
+    ]],
+    'payment_method_types' => [
+      'card',
+    ],
+    'mode' => 'subscription',
+    'success_url' => $YOUR_DOMAIN . '/success.php',
+    'cancel_url' => $YOUR_DOMAIN . '/cancel.php',
+  ]);
+  }
+  else {
+    $checkout_session = \Stripe\Checkout\Session::create([
+      'line_items' => [[
+        'price' => $price,
+        'quantity' => $amnt,
+      ]],
+    'payment_method_types' => [
+      'card',
+    ],
+    'mode' => 'subscription',
+    'success_url' => $YOUR_DOMAIN . '/success.php',
+    'cancel_url' => $YOUR_DOMAIN . '/cancel.php',
+  ]);
+  }
 
+}
 header("HTTP/1.1 303 See Other");
 header("Location: " . $checkout_session->url);
