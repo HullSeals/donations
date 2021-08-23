@@ -62,13 +62,12 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
 <div id = "otheramnt" style="display:none">
   <input type="number" placeholder="Other..." id="other_text" name="other_text" width="100%" min=1>
 </div>
-<!-- todo: Implement Subscription Model
   <hr>
 <h5>Make this a recurring donation? (Monthly)</h5>
 <div class="form-check form-switch">
   <input class="form-check-input" type="checkbox" id="recurring" name="recurring" value="sub">
   <label class="form-check-label" for="recurring">Yes! Make this a recurring donation.</label>
-</div> -->
+</div> 
 <br>
 <button class="btn btn-success" type="submit">Donate</button>
 </form>
