@@ -12,10 +12,10 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
 <head>
   <meta content="Donations to the Hull Seals" name="description">
   <title>Donate | The Hull Seals</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <?php include '../assets/includes/headerCenter.php'; ?>
-  <script src="https://js.stripe.com/v3/" integrity="sha384-kjyYhV/aySviNR/Hp59ySKU+VZfGJYfQDT/2Gv3JBSM3J0iemmgsHyT0XKNlB+NF" crossorigin="anonymous"></script>
+  <script src="https://js.stripe.com/v3/" integrity="sha384-QH2g6wXdV5Mp7rxScBFwakVYM8E0lg6ohabz0I74u/sF+S/wxRIbJhzyTlFXbm2m" crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="home">
