@@ -14,7 +14,7 @@
 
   //If you have any custom scripts, CSS, etc, you MUST declare them here.
   //They will be inserted at the bottom of the <head> section.
-  $customContent = '<script src="https://js.stripe.com/v3/" integrity="sha384-QH2g6wXdV5Mp7rxScBFwakVYM8E0lg6ohabz0I74u/sF+S/wxRIbJhzyTlFXbm2m" crossorigin="anonymous"></script>';
+  $customContent = '<script src="https://js.stripe.com/v3/" integrity="sha384-DPA8NmjO1K69SzgpqZRQsvZ4TNU22pswLX4JOpEN0TlZn+sQ64DhVU/GaY49Jdk1" crossorigin="anonymous"></script>';
 
   //UserSpice Required
   require_once '../users/init.php';  //make sure this path is correct!
