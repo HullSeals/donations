@@ -1,28 +1,27 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+  <?php
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
 
-//UserSpice Required
-require_once '../users/init.php';  //make sure this path is correct!
-if (!securePage($_SERVER['PHP_SELF'])){die();}?>
+  //Declare Title, Content, Author
+  $pgAuthor = "David Sangrey";
+  $pgContent = "Donate to The Hull Seals";
+  $useIP = 0; //1 if Yes, 0 if No.
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta content="Donations to the Hull Seals" name="description">
-  <title>Donate | The Hull Seals</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <?php include '../assets/includes/headerCenter.php'; ?>
-  <script src="https://js.stripe.com/v3/" integrity="sha384-QH2g6wXdV5Mp7rxScBFwakVYM8E0lg6ohabz0I74u/sF+S/wxRIbJhzyTlFXbm2m" crossorigin="anonymous"></script>
-</head>
-<body>
-  <div id="home">
-    <?php include '../assets/includes/menuCode.php';?>
-      <section class="introduction container">
-    <article id="intro3">
-				<h2><em>Thank You</em> for considering donating!</h2>
+  //Any custom CSS that must come BEFORE the normal CSS. Rare, but it happens.
+  $preContent = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>';
+
+  //If you have any custom scripts, CSS, etc, you MUST declare them here.
+  //They will be inserted at the bottom of the <head> section.
+  $customContent = '<script src="https://js.stripe.com/v3/" integrity="sha384-QH2g6wXdV5Mp7rxScBFwakVYM8E0lg6ohabz0I74u/sF+S/wxRIbJhzyTlFXbm2m" crossorigin="anonymous"></script>';
+
+  //UserSpice Required
+  require_once '../users/init.php';  //make sure this path is correct!
+  require_once $abs_us_root.$us_url_root.'users/includes/template/prep.php';
+  if (!securePage($_SERVER['PHP_SELF'])){die();}
+  ?>
+<h2><em>Thank You</em> for considering donating!</h2>
 				<br />
 				<p>As simple as this all seems, it costs us almost $100 per month to operate our servers. Our Admins pay for this out of pocket, but any contributions help lessen the burden.</p>
 				<p>Your generous donation will go toward maintenance of our servers, and expansion into bigger, and better, things in the future!</p>
@@ -77,12 +76,6 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}?>
 </div>
 </div>
 <br />
-<div class="clearfix"></div>
-</section>
-</div>
-<?php include '../assets/includes/footer.php'; ?>
-</body>
-</html>
 <script>
 function currType(symbol) {
   document.getElementById("lbl1").innerHTML = symbol + "1"
@@ -99,3 +92,4 @@ function otherValue() {
   document.getElementById('other_text').required = true;
 }
 </script>
+<?php require_once $abs_us_root . $us_url_root . 'users/includes/html_footer.php'; ?>
