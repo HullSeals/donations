@@ -111,3 +111,4 @@ if (isset($_POST['recurring'])) {
 }
 header("HTTP/1.1 303 See Other");
 header("Location: " . $checkout_session->url);
+// Based on https://github.com/stripe-archive/checkout-subscription-and-add-on/blob/699e48cf6943b973904f72a8f3cfaddef0c811b4/server/php/public/create-checkout-session.php
