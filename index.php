@@ -61,7 +61,7 @@
         </div>
         <br>
         <div id="otheramnt" style="display:none">
-          <input type="number" placeholder="Other..." id="other_text" name="other_text" width="100%" min=1>
+          <input type="number" placeholder="Other..." id="other_text" name="other_text" width="100%" min=1 pattern="[0-9.]">
         </div>
         <hr>
         <h5>Make this a recurring donation? (Monthly)</h5>
