@@ -24,11 +24,15 @@ if (!securePage($_SERVER['PHP_SELF'])) {
 }
 if ($_GET['status'] == "canceled") { ?>
   <h1>Transaction Canceled.</h1>
-  <h5 class="text-danger">Your donation has been canceled.<br /><br /> You may now close the tab.<br /><br /> You have not been charged.</h5>
+  <div class="alert alert-danger" role="alert">
+    <h5>Your donation has been canceled.<br /><br /> You may now close the tab.<br /><br /> You have not been charged.</h5>
+  </div>
   <hr>
 <?php } elseif ($_GET['status'] == "complete") { ?>
   <h1>Donation Successful!</h1>
-  <h5 class="text-success">Thank you for generous donation, CMDR!<br /><br /> You may now close the tab.<br /><br /> If you do not receive a confirmation email soon, please contact us.</h5>
+  <div class="alert alert-success" role="alert">
+    <h5>Thank you for generous donation, CMDR!<br /><br /> You may now close the tab.<br /><br /> If you do not receive a confirmation email soon, please contact us.</h5>
+  </div>
   <hr>
 <?php
 }
