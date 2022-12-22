@@ -22,13 +22,13 @@ require_once $abs_us_root . $us_url_root . 'users/includes/template/prep.php';
 if (!securePage($_SERVER['PHP_SELF'])) {
   die();
 }
-if ($_GET['status'] == "canceled") { ?>
+if (isset($_GET['status']) && $_GET['status'] == "canceled") { ?>
   <h1>Transaction Canceled.</h1>
   <div class="alert alert-danger" role="alert">
     <h5>Your donation has been canceled.<br /><br /> You may now close the tab.<br /><br /> You have not been charged.</h5>
   </div>
   <hr>
-<?php } elseif ($_GET['status'] == "complete") { ?>
+<?php } elseif (isset($_GET['status']) && $_GET['status'] == "complete") { ?>
   <h1>Donation Successful!</h1>
   <div class="alert alert-success" role="alert">
     <h5>Thank you for generous donation, CMDR!<br /><br /> You may now close the tab.<br /><br /> If you do not receive a confirmation email soon, please contact us.</h5>
@@ -37,7 +37,11 @@ if ($_GET['status'] == "canceled") { ?>
 <?php
 }
 ?>
-<h2><em>Thank You</em> for considering donating!</h2>
+<h2><?php if (isset($_GET['status']) && $_GET['status'] == "canceled") {
+      echo 'Thank You';
+    } else {
+      echo '<em>Thank You</em>';
+    } ?> for considering donating!</h2>
 <br />
 <p>As simple as this all seems, it costs us almost $100 per month to operate our servers. Our Admins pay for this out of pocket, but any contributions help lessen the burden.</p>
 <p>Your generous donation will go toward maintenance of our servers, and expansion into bigger, and better, things in the future!</p>
