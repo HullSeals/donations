@@ -39,8 +39,8 @@ if (!isset($_POST['recurring'])) {
       ],
       'mode' => 'payment',
       'submit_type' => 'donate',
-      'success_url' => $YOUR_DOMAIN . '/success.php',
-      'cancel_url' => $YOUR_DOMAIN . '/cancel.php',
+      'success_url' => $YOUR_DOMAIN . '/complete.php?status=complete',
+      'cancel_url' => $YOUR_DOMAIN . '/complete.php?status=canceled',
     ]);
   } else {
     $checkout_session = \Stripe\Checkout\Session::create([
@@ -56,8 +56,8 @@ if (!isset($_POST['recurring'])) {
       ],
       'mode' => 'payment',
       'submit_type' => 'donate',
-      'success_url' => $YOUR_DOMAIN . '/success.php',
-      'cancel_url' => $YOUR_DOMAIN . '/cancel.php',
+      'success_url' => $YOUR_DOMAIN . '/complete.php?status=complete',
+      'cancel_url' => $YOUR_DOMAIN . '/complete.php?status=canceled',
     ]);
   }
 }
@@ -83,8 +83,8 @@ if (isset($_POST['recurring'])) {
         'card',
       ],
       'mode' => 'subscription',
-      'success_url' => $YOUR_DOMAIN . '/success.php',
-      'cancel_url' => $YOUR_DOMAIN . '/cancel.php',
+      'success_url' => $YOUR_DOMAIN . '/complete.php?status=complete',
+      'cancel_url' => $YOUR_DOMAIN . '/complete.php?status=canceled',
     ]);
   } else {
     $checkout_session = \Stripe\Checkout\Session::create([
@@ -96,8 +96,8 @@ if (isset($_POST['recurring'])) {
         'card',
       ],
       'mode' => 'subscription',
-      'success_url' => $YOUR_DOMAIN . '/success.php',
-      'cancel_url' => $YOUR_DOMAIN . '/cancel.php',
+      'success_url' => $YOUR_DOMAIN . '/complete.php?status=complete',
+      'cancel_url' => $YOUR_DOMAIN . '/complete.php?status=canceled',
     ]);
   }
 }
