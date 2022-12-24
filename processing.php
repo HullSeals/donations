@@ -6,6 +6,7 @@ header('Content-Type: application/json');
 
 if (!isset($_POST['currselect'])) {
   header("Location: .");
+  die();
 }
 
 if ($_POST['amntselect'] == 'other') {
